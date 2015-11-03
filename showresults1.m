@@ -1,0 +1,38 @@
+% Initialv5;
+[focusX,focusY] = meshgrid(linspace(10,100,10));
+% mkdir('result1');
+for loopi = 1:10
+	for loopj = 1:10
+		x = focusX(loopi,loopj);
+		y = focusY(loopi,loopj);
+% 		map = map * 0;
+% 		focus;
+% 		focus;
+% 		focus;
+% 		focus;
+% 		maps;
+%       x = focusX(loopi,loopj);
+% 		y = focusY(loopi,loopj);
+		filename = strcat('x',num2str(x),'y',num2str(y));
+		foldername = strcat('result1/',filename);
+% 		mkdir(foldername);
+% 		tmapsname = strcat(foldername,'/tmaps.dat');
+% 		tmapfname = strcat(foldername,'/tmapf.dat');
+% 		pmapname = strcat(foldername,'/pmap.dat');
+% 		dmapname = strcat(foldername,'/dmap.dat');
+% 		mmapname = strcat(foldername,'/mmap.dat');
+% 		smapname = strcat(foldername,'/smap.dat');
+		fmapname = strcat(foldername,'/smap.dat');
+% 		dlmwrite(tmapsname,tmaps,'precision',16);
+% 		dlmwrite(tmapfname,tmapf,'precision',16);
+% 		dlmwrite(pmapname,pmap,'precision',16);
+% 		dlmwrite(dmapname,dmap,'precision',16);
+% 		dlmwrite(mmapname,mmap,'precision',16);
+% 		dlmwrite(smapname,smap,'precision',16);
+		fmap = dlmread(fmapname);
+        imagesc(fmap);
+        axis image;
+        colorbar;
+        pause(0.5);
+	end;
+end;
